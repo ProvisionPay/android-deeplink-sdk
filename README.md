@@ -26,6 +26,22 @@ implementation 'com.provisionpay:android-deeplink-sdk:1.0.0'
 ### initialize
 You have to use initalize method to 
 
+### setDebugMode
+Optionally this method is used to specify debug mode is on.
+ ``` kotlin
+  SoftposDeeplinkSdk.setDebugMode(true)
+ ``` 
+ 
+### handleDeeplinkTransaction
+This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
+ ``` kotlin
+ override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        SoftposDeeplinkSdk.handleDeeplinkTransaction()
+    }
+ ``` 
+
 ### subscribe
 Subscribe method gives status codes responses.
 ``` kotlin
