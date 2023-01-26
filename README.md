@@ -1,12 +1,77 @@
-
+[1]: https://en.wikipedia.org/wiki/Fox
 # Android DeeplinkSdk
-[![Maven - Central]([https://img.shields.io/badge/Foo-Bar-2ea44f)](https://central.sonatype.dev/artifact/com.provisionpay/android-deeplink-sdk/1.0.0))]
+[![Maven-Central - 1.0.1](https://img.shields.io/badge/Maven--Central-1.0.1-2ea44f)](https://central.sonatype.dev/artifact/com.provisionpay/android-deeplink-sdk/1.0.0)
 
 A fast entegration library for deeplink Softpos apps.
 
 # Documantation
-You can find [1]: https://en.wikipedia.org/wiki/Fox "Playground: android deeplink sdk documentation here" which has extended usage instructions and other useful information.
+You can find [android deeplink sdk documentation here][1] which has extended usage instructions and other useful information.
 
 # Installation
 
+### Gradle
+``` kotlin
+implementation 'com.provisionpay:android-deeplink-sdk:1.0.0'
+```
+### Maven
+``` kotlin
+<dependency>
+    <groupId>com.provisionpay</groupId>
+    <artifactId>android-deeplink-sdk</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+# Get Started
 
+### initialize
+You have to use initalize method to 
+
+### subscribe
+Subscribe method gives status codes responses.
+``` kotlin
+SoftposDeeplinkSdk.subscribe {
+            object : SoftposDeeplinkSdkListener {
+                override fun onPaymentDone(transaction: Transaction, isApproved: Boolean) {
+                   //TODO
+                }
+
+                override fun onCancel() {
+                    //TODO
+                }
+
+                override fun onIntentDataNotFound(intentDataError: IntentDataError) {
+                   //TODO
+
+                }
+                override fun onTimeOut() {
+                   //TODO()
+                }
+
+                override fun onError(e: Throwable) {
+                   //TODO
+                }
+
+                override fun onOfflineDecline(paymentFailedResult: PaymentFailedResult?) {
+                   //TODO
+                }
+
+                override fun onSoftposError(errorType: SoftposErrorType,description:String?) {
+                    when (errorType) {
+                        SoftposErrorType.TerminalNotFound -> {
+                           //TODO
+                        }
+                        SoftposErrorType.UserHashNotFound -> {
+                           //TODO
+                        }
+                        SoftposErrorType.ActivationNotFound -> {
+                           //TODO
+                        }
+                       SoftposErrorType.HostError -> {
+                          //TODO
+                       }
+                        else -> {}
+                    }
+                }
+            }
+        }
+```
