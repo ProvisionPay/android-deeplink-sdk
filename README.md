@@ -24,13 +24,22 @@ implementation 'com.provisionpay:android-deeplink-sdk:1.0.0'
 # Get Started
 
 ### initialize
-You have to use initalize method to 
+You have to use initalize method to be integrated into the project.
+ ``` kotlin
+SoftposDeeplinkSdk.initialize(InitializeConfig(your private key,your activity,your softpos url))
+``` 
 
 ### setDebugMode
 Optionally this method is used to specify debug mode is on.
  ``` kotlin
   SoftposDeeplinkSdk.setDebugMode(true)
  ``` 
+### startPayment
+This method starts your payment and provides you to softpos application. The method takes paymentSessionToken as parameter. This token must be 16 character.
+ ``` kotlin
+ SoftposDeeplinkSdk.startPayment(paymentSessionToken)
+ ``` 
+ 
  
 ### handleDeeplinkTransaction
 This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
