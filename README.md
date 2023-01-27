@@ -1,6 +1,6 @@
 [1]: https://en.wikipedia.org/wiki/Fox
 # Android DeeplinkSdk
-[![Maven-Central - 1.0.1](https://img.shields.io/badge/Maven--Central-1.0.1-2ea44f)](https://central.sonatype.dev/artifact/com.provisionpay/android-deeplink-sdk/1.0.0)
+[![Maven-Central - 1.0.1.0](https://img.shields.io/badge/Maven--Central-1.0.1-2ea44f)](https://central.sonatype.dev/artifact/com.provisionpay/android-deeplink-sdk/1.0.0)
 
 A fast entegration library for deeplink Softpos apps.
 
@@ -30,7 +30,7 @@ You have to use initalize method to be integrated into the project.
 val privateKey = "your private key" 
 val activity = "your activity"
 val softposUrl = "your softpos url"
-SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity,softposUrl = softposUrl))
+SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity ,softposUrl = softposUrl))
 ``` 
 
 ### startPayment
