@@ -100,3 +100,20 @@ SoftposDeeplinkSdk.subscribe {
             }
         }
 ```
+### registerBroadcastReceiver
+This method takes your softpos url and gives BroadcastReceiverListener object. With this method you can listen eventType , evenTypeMessage and paymentSessionToken. 
+
+``` kotlin
+SoftposDeeplinkSdk.registerBroadcastReceiver(your softpos url, {
+            object : BroadcastReceiverListener {
+                override fun onSoftposBroadcastReceived(
+                    eventType: Int,
+                    eventTypeMessage: String,
+                    paymentSessionToken: String
+                ) {
+                   //TODO
+                }
+            }
+        }
+ ```       
+ ### Exception Types
