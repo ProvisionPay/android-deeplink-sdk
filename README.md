@@ -11,8 +11,9 @@ You can find [android deeplink sdk documentation here][1] which has extended usa
 
 ### Gradle
 ``` kotlin
-implementation 'com.provisionpay:android-deeplink-sdk:1.0.0'
-```
+implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
+``` 
+
 ### Maven
 ``` kotlin
 <dependency>
@@ -26,14 +27,12 @@ implementation 'com.provisionpay:android-deeplink-sdk:1.0.0'
 ### initialize
 You have to use initalize method to be integrated into the project.
  ``` kotlin
-SoftposDeeplinkSdk.initialize(InitializeConfig(your private key,your activity,your softpos url))
+val privateKey = "your private key" 
+val activity = "your activity"
+val softposUrl = "your softpos url"
+SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity,softposUrl = softposUrl))
 ``` 
 
-### setDebugMode
-Optionally this method is used to specify debug mode is on.
- ``` kotlin
-  SoftposDeeplinkSdk.setDebugMode(true)
- ``` 
 ### startPayment
 This method starts your payment and provides you to softpos application. The method takes paymentSessionToken as parameter. This token must be 16 character.
  ``` kotlin
@@ -104,7 +103,8 @@ SoftposDeeplinkSdk.subscribe {
 This method takes your softpos url and gives BroadcastReceiverListener object. With this method you can listen eventType , evenTypeMessage and paymentSessionToken. 
 
 ``` kotlin
-SoftposDeeplinkSdk.registerBroadcastReceiver(your softpos url, {
+val packageId = "your package ıd"
+SoftposDeeplinkSdk.registerBroadcastReceiver(packageId, {
             object : BroadcastReceiverListener {
                 override fun onSoftposBroadcastReceived(
                     eventType: Int,
@@ -116,4 +116,17 @@ SoftposDeeplinkSdk.registerBroadcastReceiver(your softpos url, {
             }
         }
  ```       
+ ### setDebugMode
+Optionally this method is used to specify debug mode is on.
+ ``` kotlin
+  SoftposDeeplinkSdk.setDebugMode(true)
+ ``` 
  ### Exception Types
+ * ArgumentLengthException
+ * InvalidInitializeMethod
+ * InvalidPrivateException
+ * MissingArgumentException
+ * NullArgumentException
+ * NullSubscribeParameterException
+ * WrongPaymentSessionTokenException
+ * WrongPrivateKeyException
