@@ -131,3 +131,8 @@ Optionally this method is used to specify debug mode is on.
  * NullSubscribeParameterException
  * WrongPaymentSessionTokenException
  * WrongPrivateKeyException
+
+ ### Sample projects
+* Semple kotlin project [ demo](https://github.com/ProvisionPay/android-demo-kotlin).
+* Semple java dotnet [ demo](https://github.com/ProvisionPay/android-demo-java).
+
