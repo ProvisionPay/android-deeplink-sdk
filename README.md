@@ -4,9 +4,6 @@
 
 A fast entegration library for deeplink Softpos apps.
 
-# Documantation
-You can find [android deeplink sdk documentation here][1] which has extended usage instructions and other useful information.
-
 # Installation
 
 ### Gradle
