@@ -134,5 +134,5 @@ Optionally this method is used to specify debug mode is on.
 
  ### Sample projects
 * Semple kotlin project [ demo](https://github.com/ProvisionPay/android-demo-kotlin).
-* Semple java dotnet [ demo](https://github.com/ProvisionPay/android-demo-java).
+* Semple java project [ demo](https://github.com/ProvisionPay/android-demo-java).
 
