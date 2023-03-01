@@ -1,6 +1,6 @@
 [1]: https://en.wikipedia.org/wiki/Fox
 # Android DeeplinkSdk
-[![Maven-Central - 1.0.4](https://img.shields.io/badge/Maven--Central-1.0.1.0-2ea44f)](https://central.sonatype.com/artifact/com.provisionpay/android-deeplink-sdk/1.0.4)
+[![Maven-Central - 1.0.5](https://img.shields.io/badge/Maven--Central-1.0.5-2ea44f)](https://central.sonatype.com/artifact/com.provisionpay/android-deeplink-sdk/1.0.5)
 
 A fast entegration library for deeplink Softpos apps.
 
@@ -12,7 +12,7 @@ implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 ``` 
 ### ivy
 ``` ivy
-<dependency org="com.provisionpay" name="android-deeplink-sdk" rev="1.0.4"/>;
+<dependency org="com.provisionpay" name="android-deeplink-sdk" rev="latest-version"/>;
 ```
 
 ### Maven
