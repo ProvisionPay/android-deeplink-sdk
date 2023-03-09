@@ -11,14 +11,6 @@ A fast entegration library for deeplink Softpos apps.
 implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 ``` 
 
-``` kotlin
- repositories {
-        google()
-        jcenter()
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-``` 
-
 ### ivy
 ``` ivy
 <dependency org="com.provisionpay" name="android-deeplink-sdk" rev="latest-version"/>;
