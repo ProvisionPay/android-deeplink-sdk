@@ -10,20 +10,6 @@ A fast entegration library for deeplink Softpos apps.
 ``` kotlin
 implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 ``` 
-
-### ivy
-``` ivy
-<dependency org="com.provisionpay" name="android-deeplink-sdk" rev="latest-version"/>;
-```
-
-### Maven
-``` kotlin
-<dependency>
-    <groupId>com.provisionpay</groupId>
-    <artifactId>android-deeplink-sdk</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
 # Get Started
 
 ### initialize
