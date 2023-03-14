@@ -16,17 +16,18 @@ implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 You have to use initalize method to be integrated into the project.
  ``` kotlin
 val privateKey = "your private key" 
-val activity = "your activity"
+val activity   = "your activity"
 val softposUrl = "your softpos url"
 SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity ,softposUrl = softposUrl))
 ``` 
+Throws: NullArgumentException, ArgumentLengthException
 
 ### startPayment
 This method starts your payment and provides you to softpos application. The method takes paymentSessionToken as parameter. This token must be 16 character.
  ``` kotlin
  SoftposDeeplinkSdk.startPayment(paymentSessionToken)
  ``` 
- 
+ Throws: MissingArgumentException, NullArgumentException, ArgumentLengthException
  
 ### handleDeeplinkTransaction
 This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
@@ -37,6 +38,7 @@ This method is used onNewIntent() method on MainActivity. The method provides ca
         SoftposDeeplinkSdk.handleDeeplinkTransaction()
     }
  ``` 
+Throws: InvalidInitializeMethod, NullArgumentException, NullSubscribeParameterException  
 
 ### subscribe
 Subscribe method gives status codes responses.
@@ -91,7 +93,7 @@ SoftposDeeplinkSdk.subscribe {
 This method takes your softpos url and gives BroadcastReceiverListener object. With this method you can listen eventType , evenTypeMessage and paymentSessionToken. 
 
 ``` kotlin
-val packageId = "your package ıd"
+val packageId = "package id of softpos app"
 SoftposDeeplinkSdk.registerBroadcastReceiver(packageId, {
             object : BroadcastReceiverListener {
                 override fun onSoftposBroadcastReceived(
@@ -104,20 +106,13 @@ SoftposDeeplinkSdk.registerBroadcastReceiver(packageId, {
             }
         }
  ```       
+ Throws: NullArgumentException
+ 
  ### setDebugMode
 Optionally this method is used to specify debug mode is on.
  ``` kotlin
   SoftposDeeplinkSdk.setDebugMode(true)
  ``` 
- ### Exception Types
- * ArgumentLengthException
- * InvalidInitializeMethod
- * InvalidPrivateException
- * MissingArgumentException
- * NullArgumentException
- * NullSubscribeParameterException
- * WrongPaymentSessionTokenException
- * WrongPrivateKeyException
 
  ### Sample projects
 * Semple kotlin project [ demo](https://github.com/ProvisionPay/android-demo-kotlin).
