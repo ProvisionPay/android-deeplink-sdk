@@ -1,6 +1,6 @@
 [1]: https://en.wikipedia.org/wiki/Fox
 # Android DeeplinkSdk
-[![Maven-Central - 1.0.6](https://img.shields.io/badge/Maven--Central-1.0.6-2ea44f)](https://central.sonatype.com/artifact/com.provisionpay/android-deeplink-sdk/1.0.6)
+[![Maven version (android-deeplink-sdk)](https://img.shields.io/maven-metadata/v.svg?label=maven-central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fprovisionpay%2Fandroid-deeplink-sdk%2Fmaven-metadata.xml)](https://central.sonatype.com/artifact/com.provisionpay/android-deeplink-sdk)
 
 A fast entegration library for deeplink Softpos apps.
 
@@ -115,6 +115,9 @@ Optionally this method is used to specify debug mode is on.
  ``` 
 
  ### Sample projects
-* Semple kotlin project [ demo](https://github.com/ProvisionPay/android-demo-kotlin).
-* Semple java project [ demo](https://github.com/ProvisionPay/android-demo-java).
+|   |  |
+|------------|--------------|
+| Kotlin Demo  | Click for [ kotlin demo](https://github.com/ProvisionPay/android-demo-kotlin)      |
+| Java Demo    | Click for [ java demo](https://github.com/ProvisionPay/android-demo-java)          |
+ 
 
