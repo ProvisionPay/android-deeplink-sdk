@@ -54,16 +54,16 @@ SoftposDeeplinkSdk.subscribe {
 
                 override fun onIntentData(dataFlow: IntentDataFlow, data : String) {
                    when(e){
-                    is dataFlow.DataDecrypted -> {
+                     dataFlow.DataDecrypted -> {
                         //TODO
                     }
-                    is paymentFailedResult.DataFound -> {
+                     paymentFailedResult.DataFound -> {
                         //TODO
                     }
-                    is paymentFailedResult.ActivityIntentDataIsNull -> {
+                     paymentFailedResult.ActivityIntentDataIsNull -> {
                         //TODO
                     }
-                    is paymentFailedResult.ActivityIntentParameterDataIsNull -> {
+                     paymentFailedResult.ActivityIntentParameterDataIsNull -> {
                         //TODO
                     }
                 }
