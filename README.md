@@ -10,9 +10,8 @@ A fast entegration library for deeplink Softpos apps.
 ``` kotlin
 implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 ``` 
-# Get Started
 
-### initialize
+# 1. Initialize
 You have to use initalize method to be integrated into the project.
  ``` kotlin
 val privateKey = "your private key" 
@@ -22,14 +21,14 @@ SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity
 ``` 
 Throws: NullArgumentException, ArgumentLengthException
 
-### startPayment
+# 2. Start Payment
 This method starts your payment and provides you to softpos application. The method takes paymentSessionToken as parameter. This token must be 16 character.
  ``` kotlin
  SoftposDeeplinkSdk.startPayment(paymentSessionToken)
  ``` 
  Throws: MissingArgumentException, NullArgumentException, ArgumentLengthException
  
-### handleDeeplinkTransaction
+# 3. OnNewIntent Method
 This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
  ``` kotlin
  override fun onNewIntent(intent: Intent?) {
@@ -40,7 +39,7 @@ This method is used onNewIntent() method on MainActivity. The method provides ca
  ``` 
 Throws: InvalidInitializeMethod, NullArgumentException, NullSubscribeParameterException  
 
-### subscribe
+# 4. Handle Softpos Events
 Subscribe method gives status codes responses.
 ``` kotlin
 SoftposDeeplinkSdk.subscribe {
@@ -53,9 +52,20 @@ SoftposDeeplinkSdk.subscribe {
                     //TODO
                 }
 
-                override fun onIntentDataNotFound(intentDataError: IntentDataError) {
-                   //TODO
-
+                override fun onIntentData(dataFlow: IntentDataFlow, data : String) {
+                   when(e){
+                    is dataFlow.DataDecrypted -> {
+                        //TODO
+                    }
+                    is paymentFailedResult.DataFound -> {
+                        //TODO
+                    }
+                    is paymentFailedResult.ActivityIntentDataIsNull -> {
+                        //TODO
+                    }
+                    is paymentFailedResult.ActivityIntentParameterDataIsNull -> {
+                        //TODO
+                    }
                 }
                 override fun onTimeOut() {
                    //TODO()
@@ -89,7 +99,7 @@ SoftposDeeplinkSdk.subscribe {
             }
         }
 ```
-### registerBroadcastReceiver
+# 5. Broadcast Receiver Support
 This method takes your softpos url and gives BroadcastReceiverListener object. With this method you can listen eventType , evenTypeMessage and paymentSessionToken. 
 
 ``` kotlin
@@ -108,16 +118,18 @@ SoftposDeeplinkSdk.registerBroadcastReceiver(packageId, {
  ```       
  Throws: NullArgumentException
  
- ### setDebugMode
+# 6. Debug Mode Setting
 Optionally this method is used to specify debug mode is on.
  ``` kotlin
   SoftposDeeplinkSdk.setDebugMode(true)
  ``` 
 
- ### Sample projects
-|   |  |
-|------------|--------------|
-| Kotlin Demo  | Click for [ kotlin demo](https://github.com/ProvisionPay/android-demo-kotlin)      |
-| Java Demo    | Click for [ java demo](https://github.com/ProvisionPay/android-demo-java)          |
- 
+ # 7. Sample projects
+ | Platform  | Language |                                                           |
+|------------|--------------|--------------------------------------------------------------|
+| Android   |Kotlin           | [android-demo-kotlin](https://github.com/ProvisionPay/android-demo-kotlin)    |
+| Android   |Java       | [android-demo-java](https://github.com/ProvisionPay/android-demo-java) |
+
+
+
 
