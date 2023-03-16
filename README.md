@@ -1,6 +1,6 @@
 [1]: https://en.wikipedia.org/wiki/Fox
 # Android DeeplinkSdk
-[![Maven version (android-deeplink-sdk)](https://img.shields.io/maven-metadata/v.svg?label=maven-central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fprovisionpay%2Fandroid-deeplink-sdk%2Fmaven-metadata.xml)](https://central.sonatype.com/artifact/com.provisionpay/android-deeplink-sdk)
+[![Maven version (android-deeplink-sdk)](https://img.shields.io/maven-metadata/v.svg?label=maven-central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fprovisionpay%2Fandroid-deeplink-sdk%2Fmaven-metadata.xml)](https://central.sonatype.com/artifact/com.provisionpay)
 
 A fast entegration library for deeplink Softpos apps.
 
@@ -120,6 +120,7 @@ SoftposDeeplinkSdk.registerBroadcastReceiver(packageId, {
  
 # 6. Debug Mode Setting
 Optionally this method is used to specify debug mode is on.
+Tag is "SOFTPOS".
  ``` kotlin
   SoftposDeeplinkSdk.setDebugMode(true)
  ``` 
