@@ -57,13 +57,13 @@ SoftposDeeplinkSdk.subscribe {
                      dataFlow.DataDecrypted -> {
                         //TODO
                     }
-                     paymentFailedResult.DataFound -> {
+                     dataFlow.DataFound -> {
                         //TODO
                     }
-                     paymentFailedResult.ActivityIntentDataIsNull -> {
+                     dataFlow.ActivityIntentDataIsNull -> {
                         //TODO
                     }
-                     paymentFailedResult.ActivityIntentParameterDataIsNull -> {
+                     dataFlow.ActivityIntentParameterDataIsNull -> {
                         //TODO
                     }
                 }
