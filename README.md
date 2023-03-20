@@ -11,24 +11,26 @@ A fast entegration library for deeplink Softpos apps.
 implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 ``` 
 
-# 1. Initialize
-You have to use initalize method to be integrated into the project.
- ``` kotlin
-val privateKey = "your private key" 
-val activity   = "your activity"
-val softposUrl = "your softpos url"
-SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity ,softposUrl = softposUrl))
-``` 
-Throws: NullArgumentException, ArgumentLengthException
+# 1. Manifest
+You must add this lines to your activity at Manifest.
+``` kotlin
+ <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
-# 2. Start Payment
-This method starts your payment and provides you to softpos application. The method takes paymentSessionToken as parameter. This token must be 16 character.
- ``` kotlin
- SoftposDeeplinkSdk.startPayment(paymentSessionToken)
- ``` 
- Throws: MissingArgumentException, NullArgumentException, ArgumentLengthException
- 
-# 3. OnNewIntent Method
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="your_scheme" /> 
+                <data
+                    android:host="your_host"
+                    android:pathPrefix="your_pathPrefix"/> 
+            </intent-filter>
+            
+``` 
+# 2. OnNewIntent Method
 This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
  ``` kotlin
  override fun onNewIntent(intent: Intent?) {
@@ -37,9 +39,28 @@ This method is used onNewIntent() method on MainActivity. The method provides ca
         SoftposDeeplinkSdk.handleDeeplinkTransaction()
     }
  ``` 
+ 
+# 3. Initialize
+You have to use initalize method to be integrated into the project.
+ ``` kotlin
+val privateKey = "your private key" 
+val activity   = this
+val softposUrl = "your softpos url"
+SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity ,softposUrl = softposUrl))
+``` 
+Throws: NullArgumentException, ArgumentLengthException
+
+# 4. Start Payment
+This method starts your payment and provides you to softpos application. The method takes paymentSessionToken as parameter. This token must be 16 character.
+ ``` kotlin
+ SoftposDeeplinkSdk.startPayment(paymentSessionToken)
+ ``` 
+ Throws: MissingArgumentException, NullArgumentException, ArgumentLengthException
+ 
+
 Throws: InvalidInitializeMethod, NullArgumentException, NullSubscribeParameterException  
 
-# 4. Handle Softpos Events
+# 5. Handle Softpos Events
 Subscribe method gives status codes responses.
 ``` kotlin
 SoftposDeeplinkSdk.subscribe {
@@ -99,7 +120,7 @@ SoftposDeeplinkSdk.subscribe {
             }
         }
 ```
-# 5. Broadcast Receiver Support
+# 6. Broadcast Receiver Support
 This method takes your softpos url and gives BroadcastReceiverListener object. With this method you can listen eventType , evenTypeMessage and paymentSessionToken. 
 
 ``` kotlin
@@ -118,14 +139,14 @@ SoftposDeeplinkSdk.registerBroadcastReceiver(packageId, {
  ```       
  Throws: NullArgumentException
  
-# 6. Debug Mode Setting
+# 7. Debug Mode Setting
 Optionally this method is used to specify debug mode is on.
 Tag is "SOFTPOS".
  ``` kotlin
   SoftposDeeplinkSdk.setDebugMode(true)
  ``` 
 
- # 7. Sample projects
+ # 8. Sample projects
  | Platform  | Language |                                                           |
 |------------|--------------|--------------------------------------------------------------|
 | Android   |Kotlin           | [android-demo-kotlin](https://github.com/ProvisionPay/android-demo-kotlin)    |
