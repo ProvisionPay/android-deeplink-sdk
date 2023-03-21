@@ -150,5 +150,6 @@ Tag is "SOFTPOS".
 | Android   |Java       | [android-demo-java](https://github.com/ProvisionPay/android-demo-java) |
 
 
-
+ # 9. Video Tutorial
+[<img src="https://provisionpay.com/wp-content/uploads/2020/05/android_sdk_youtube_cover.png" >](https://youtu.be/BbmtVzKq1sY "Softpos Deeplink Android SDK")
 
