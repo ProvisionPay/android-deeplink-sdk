@@ -13,7 +13,7 @@ implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 
 # 1. Manifest
 You must add this lines to your activity at Manifest.
-``` xml:highlight={2,4-6}
+``` xml
  <intent-filter>
      <action android:name="android.intent.action.MAIN" />
      <category android:name="android.intent.category.LAUNCHER" />
