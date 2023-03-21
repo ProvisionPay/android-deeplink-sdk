@@ -43,7 +43,7 @@ This method is used onNewIntent() method on MainActivity. The method provides ca
 You have to use initalize method to be integrated into the project.
  ``` kotlin
 val privateKey = "your private key" 
-val activity   = this
+val activity   = this.requireActivity()
 val softposUrl = "your softpos url"
 SoftposDeeplinkSdk.initialize(InitializeConfig(privateKey = privateKey ,activity = activity ,softposUrl = softposUrl))
 ``` 
