@@ -12,13 +12,13 @@ implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 ``` 
 
 # 1. Manifest
-You must add this lines to your activity at Manifest.
+You must set the launchMode property to singleTask for your main activity.
 ``` xml
- <intent-filter>
-     <action android:name="android.intent.action.MAIN" />
-     <category android:name="android.intent.category.LAUNCHER" />
- </intent-filter>
+<activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask">
+``` 
 
+You must to add the following codes for deeplink definition.
+``` xml
  <intent-filter android:autoVerify="true">
      <action android:name="android.intent.action.VIEW" />
      <category android:name="android.intent.category.DEFAULT" />
@@ -28,7 +28,6 @@ You must add this lines to your activity at Manifest.
          android:host="your_host"
          android:pathPrefix="your_pathPrefix"/> 
  </intent-filter>
-            
 ``` 
 # 2. OnNewIntent Method
 This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
