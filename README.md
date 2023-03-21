@@ -57,8 +57,6 @@ This method starts your payment and provides you to softpos application. The met
  Throws: MissingArgumentException, NullArgumentException, ArgumentLengthException
  
 
-Throws: InvalidInitializeMethod, NullArgumentException, NullSubscribeParameterException  
-
 # 5. Handle Softpos Events
 Subscribe method gives status codes responses.
 ``` kotlin
