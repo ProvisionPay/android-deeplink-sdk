@@ -15,19 +15,19 @@ implementation 'com.provisionpay:android-deeplink-sdk:latest-version'
 You must add this lines to your activity at Manifest.
 ``` xml
  <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+     <action android:name="android.intent.action.MAIN" />
+     <category android:name="android.intent.category.LAUNCHER" />
+ </intent-filter>
 
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="your_scheme" /> 
-                <data
-                    android:host="your_host"
-                    android:pathPrefix="your_pathPrefix"/> 
-            </intent-filter>
+ <intent-filter android:autoVerify="true">
+     <action android:name="android.intent.action.VIEW" />
+     <category android:name="android.intent.category.DEFAULT" />
+     <category android:name="android.intent.category.BROWSABLE" />
+     <data android:scheme="your_scheme" /> 
+     <data
+         android:host="your_host"
+         android:pathPrefix="your_pathPrefix"/> 
+ </intent-filter>
             
 ``` 
 # 2. OnNewIntent Method
