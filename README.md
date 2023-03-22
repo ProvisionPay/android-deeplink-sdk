@@ -1,5 +1,5 @@
 [1]: https://en.wikipedia.org/wiki/Fox
-# Android DeeplinkSdk
+# SoftPOS Deeplink Android SDK
 [![Maven version (android-deeplink-sdk)](https://img.shields.io/maven-metadata/v.svg?label=maven-central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fprovisionpay%2Fandroid-deeplink-sdk%2Fmaven-metadata.xml)](https://central.sonatype.com/namespace/com.provisionpay)
 
 A fast entegration library for deeplink Softpos apps.
@@ -29,7 +29,7 @@ You must to add the following codes for deeplink definition.
          android:pathPrefix="your_pathPrefix"/> 
  </intent-filter>
 ``` 
-# 2. OnNewIntent Method
+# 2. onNewIntent Method
 This method is used onNewIntent() method on MainActivity. The method provides categorize response status codes that comes Softpos applications.
  ``` kotlin
  override fun onNewIntent(intent: Intent?) {
